@@ -12,7 +12,7 @@ if [ ! -L ${GO_BINARY} ] || [ ! -e ${GO_BINARY} ]; then
   curl -sSL https://storage.googleapis.com/golang/go${GO_VERSION}.linux-amd64.tar.gz | tar -xzf - -C ${GO_BASE_PATH}
   for BINARY in `ls ${GO_BASE_PATH}/go/bin`
   do
-    ln -s $BINARY /usr/bin/
+    ln -s ${GO_BASE_PATH}/go/bin/${BINARY} /usr/bin/
   done
 fi
 
